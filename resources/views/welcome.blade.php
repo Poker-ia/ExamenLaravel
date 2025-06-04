@@ -21,7 +21,7 @@
     </head>
    <body>
     @include('layouts.nav')
-    <h2 style="font-size: 40px;" class="text-center  font-extrabold mt-15 mb-20">Cursos Online</h2>
+    <h2 style="font-size: 40px;" class="text-center  font-extrabold mt-15 mb-20">CURSOS ONLINE</h2>
 
   <div class="container mx-auto p-6 flex flex-wrap justify-center gap-6">
   <!-- Tarjeta 1 -->
@@ -36,7 +36,7 @@
       <div class="text-center">
         <a href="{{$plataformas->find($curso->plataforma_id)->url}}" target="_blank" rel="noopener" 
            class="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300">
-          Ir al curso
+          Ir al Curso
         </a>
       </div>
     </div>
