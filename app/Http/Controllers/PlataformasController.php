@@ -38,6 +38,17 @@ class PlataformasController extends Controller
             'nombre' => $request->nombre,
             'url' => $request->url,
         ]);
+
+        session()->flash('swal', [
+    'icon' => 'success',
+    'title' => 'Plataforma creada correctamente',
+    'text' => 'La plataforma ha sido creada exitosamente.',
+    'customClass' => [
+        'confirmButton' => 'bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700'
+    ],
+    'buttonsStyling' => false
+]);
+
         return redirect()->route('plataformas.index');
     }
 
@@ -69,11 +80,16 @@ class PlataformasController extends Controller
 
     $plataforma->update($data);
 
-    session()->flash('swal',[
+    session()->flash('swal', [
         'icon' => 'success',
         'title' => 'Plataforma actualizada correctamente',
         'text' => 'La plataforma ha sido actualizada exitosamente.',
+        'customClass' => [
+            'confirmButton' => 'bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700'
+        ],
+        'buttonsStyling' => false
     ]);
+    
 
         return redirect()->route('plataformas.index');
 

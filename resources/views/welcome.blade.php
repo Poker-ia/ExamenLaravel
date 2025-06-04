@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Cursos Online</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -27,20 +27,23 @@
   <!-- Tarjeta 1 -->
   @foreach ($cursos as $curso)
       
-  <div class="bg-white rounded-lg shadow-md overflow-hidden w-64 flex flex-col transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
-    <img src="{{ asset('storage/'.$curso->imagen)}}" alt="Curso 1" class="w-full h-36 object-cover" />
+  <div class="bg-white rounded-lg shadow-md overflow-hidden w-64 flex flex-col transform-gpu transition-all duration-500 ease-out hover:scale-105 hover:shadow-xl">
+    <img src="{{ asset('storage/' . $curso->imagen) }}" alt="Curso 1" class="w-full h-36 object-cover" />
     <div class="p-4 flex flex-col flex-grow">
-      <h3 class="text-lg font-semibold mb-2">{{$curso->titulo}}</h3>
-      <p class="text-gray-600 flex-grow mb-4 text-sm">{{$curso->descripcion}}</p>
-      <p class="font-semibold text-gray-800 mb-4">Plataforma: <span>{{$plataformas->find($curso->plataforma_id)->nombre}}</span></p>
-      <div class="text-center">
-        <a href="{{$plataformas->find($curso->plataforma_id)->url}}" target="_blank" rel="noopener" 
-           class="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300">
-          Ir al Curso
-        </a>
-      </div>
+        <h3 class="text-lg font-semibold mb-2">{{ $curso->titulo }}</h3>
+        <p class="text-gray-600 flex-grow mb-4 text-sm">{{ $curso->descripcion }}</p>
+        <p class="font-semibold text-gray-800 mb-4">
+            Plataforma: <span>{{ $plataformas->find($curso->plataforma_id)->nombre }}</span>
+        </p>
+        <div class="text-center">
+            <a href="{{ $plataformas->find($curso->plataforma_id)->url }}" target="_blank" rel="noopener"
+                class="inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300">
+                Ir al Curso
+            </a>
+        </div>
     </div>
 </div>
+
   @endforeach
 
 </div>

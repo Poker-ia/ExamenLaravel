@@ -52,6 +52,15 @@ class CursosController extends Controller
         'imagen' => $imagenPath,
         'plataforma_id' => $request->plataforma_id,
     ]);
+     session()->flash('swal', [
+    'icon' => 'success',
+    'title' => 'Curso creado correctamente',
+    'text' => 'El Curso ha sido creada exitosamente.',
+    'customClass' => [
+        'confirmButton' => 'bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700'
+    ],
+    'buttonsStyling' => false
+]);
 
         return redirect()->route('cursos.index');
     }
@@ -97,6 +106,16 @@ class CursosController extends Controller
 
     // Actualizar datos del curso
     $curso->update($data);
+
+    session()->flash('swal', [
+        'icon' => 'success',
+        'title' => 'Curso actualizado correctamente',
+        'text' => 'El Curso ha sido actualizado exitosamente.',
+        'customClass' => [
+            'confirmButton' => 'bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700'
+        ],
+        'buttonsStyling' => false
+    ]);
         
         return redirect()->route('cursos.index');
     }
