@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: examen-laravel
+    env: php
+    plan: free
+    buildCommand: |
+      composer install --no-dev --optimize-autoloader
+      php artisan key:generate
+      php artisan migrate --force
+    startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        generateValue: true
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        value: dpg-d0vsl4qli9vc73d7ev7g-a
+      - key: DB_PORT
+        value: 5432
+      - key: DB_DATABASE
+        value: examenlaravel
+      - key: DB_USERNAME
+        value: examenlaravel_user
+      - key: DB_PASSWORD
+        value: rl0FCdo4SR0A9vfX3OIfNOzxWRI1xqfg
