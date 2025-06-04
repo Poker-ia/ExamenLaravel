@@ -21,13 +21,13 @@
     </head>
    <body>
     @include('layouts.nav')
-    <h2 style="font-size: 40px;" class="text-center  font-extrabold mt-15 mb-20">CURSOS ONLINE</h2>
+    <h2 style="font-size: 40px;" class="text-center  font-extrabold mt-15 mb-20">Cursos Online</h2>
 
-  <div class="container mx-auto p-6 flex flex-wrap justify-center gap-6">
+  <div class="container mx-auto p-6 flex flex-wrap justify-start gap-6 mt-20">
   <!-- Tarjeta 1 -->
   @foreach ($cursos as $curso)
       
-  <div class="bg-white rounded-lg shadow-md overflow-hidden w-64 flex flex-col transform-gpu transition-all duration-500 ease-out hover:scale-105 hover:shadow-xl">
+  <div class="bg-white rounded-lg shadow-md overflow-hidden w-64 flex flex-col transform-gpu transition-transform duration-700 ease-in-out hover:scale-[1.03] hover:shadow-xl">
     <img src="{{ asset('storage/' . $curso->imagen) }}" alt="Curso 1" class="w-full h-36 object-cover" />
     <div class="p-4 flex flex-col flex-grow">
         <h3 class="text-lg font-semibold mb-2">{{ $curso->titulo }}</h3>
@@ -42,11 +42,13 @@
             </a>
         </div>
     </div>
-</div>
+  </div>
 
   @endforeach
-
 </div>
+
+
+
 
 
 
