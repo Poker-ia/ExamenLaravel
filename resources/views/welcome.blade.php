@@ -23,7 +23,7 @@
     @include('layouts.nav')
     <h2 style="font-size: 40px;" class="text-center  font-extrabold mt-15 mb-20">Cursos Online</h2>
 
-  <div class="container mx-auto p-6 flex flex-wrap justify-start gap-6 mt-20">
+  <div class="container w-[65%] mx-auto p-6 flex flex-wrap justify-start gap-6 mt-20">
   <!-- Tarjeta 1 -->
   @foreach ($cursos as $curso)
       
